@@ -6,6 +6,7 @@ var port = process.env.PORT || 8080;
 var mongoURI = process.env.MONGOURI || require('./config.js').mongoURI;
 
 mongoose.connect(mongoURI); //established the connection
+
 server.get('/', function(req, res){
   res.send('I am working!');
 });
