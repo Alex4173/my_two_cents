@@ -8,7 +8,7 @@
     var posts = [];
     var baseUrl = '/posts/';
     init();
-    return{
+    return {
       getAll: getAll,
       getOne: getOne,
       create: create,
@@ -16,10 +16,28 @@
       delete: deleteOne
     };
 
-    function init(){}
-    function getAll(){}
+    function init(){
+      $http.get(baseUrl)
+          .then(function(response){
+            posts = response.data.posts;
+          })
+          .catch(function(err){
+            console.log(err);
+          });
+    }
+    function getAll(){
+      return posts;
+    }
     function getOne(id){}
-    function create(newPost){}
+    function create(newPost){
+      $http.post(baseUrl, newPost)
+      .then(function(response){
+        init();
+      })
+      .catch(function(error){
+        console.log(error);
+      });
+    }
     function update(id, newPostData){}
     function deleteOne(id){}
   }

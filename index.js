@@ -10,6 +10,7 @@ var mongoURI = process.env.MONGOURI || require('./config.js').mongoURI;
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
 
+server.use(express.static(__dirname + '/public'));
 mongoose.connect(mongoURI); //established the connection to the mongo
 
 server.get('/', function(req, res){
