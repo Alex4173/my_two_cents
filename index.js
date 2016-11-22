@@ -13,7 +13,7 @@ server.use(bodyParser.urlencoded({extended: true}));
 mongoose.connect(mongoURI); //established the connection to the mongo
 
 server.get('/', function(req, res){
-  res.send('I am working!');
+  res.sendFile('public/html/index.html',), {root: __dirname};
 });
 server.use(postRouter);
 
