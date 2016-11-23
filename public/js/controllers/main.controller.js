@@ -9,7 +9,16 @@
     $scope.create = create;
     $scope.deletePost = deletePost;
     $scope.updatePost = updatePost;
+    $scope.getOne = getOne;
+    $scope.getSelectedPost = getSelectedPost;
 
+    function getOne(id){
+      PostService.getOne(id);
+    }
+
+    function getSelectedPost(){
+      $scope.selectedPost = PostService.getSelectedPost();
+    }
 
     $scope.$watch(function(){
       return PostService.getAll();
@@ -32,5 +41,5 @@
       $scope.updatedPost = {};
     }
   }
-  
+
 }());
