@@ -53,7 +53,7 @@ router.put('/posts/:id', function(req, res){
     });
   });
 });
-router.delete('posts/:id', function(req,res){
+router.delete('/posts/:id', function(req,res){
   Post.findOneAndRemove({ _id: req.params.id }, function(err, deletedPost){
     if(err){
       return res.status(500).json({
