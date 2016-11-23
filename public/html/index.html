@@ -18,6 +18,7 @@
       Deleted:
       <input type="text" ng-model='deleteId'>
       <button class="btn btn-danger" ng-click='deletePost(deleteId)'>Delete</button>
+      <hr>
       Get One:
       <input type="text" ng-model='getId'>
       <button class="btn btn-success" ng-click="getOne(getId)">Get That!</button>
@@ -26,6 +27,7 @@
       <input type="text" ng-model='updateId'>
       <input type="text" ng-model='updatedPost.author'>
       <input type="text" ng-model='updatedPost.title'>
+      <hr>
       <textarea ng-model='updatedPost.body' cols="30" rows="10"></textarea>
       <button class="btn btn-default" ng-click="updatePost(updateId, updatedPost)"></button>
       <hr>
