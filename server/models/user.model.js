@@ -29,7 +29,11 @@ userSchema.methods.setPassword = function(password){
   this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64)
                     .toString('hex');
 };
-userSchema.methods.validPassword = function(password){};
+userSchema.methods.validPassword = function(password){
+  var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64)
+                   .toString('hex');
+  return this.hash === hash; //if = then you provided the correct password.  otherwise NO
+};
 userSchema.methods.generateJwt = function(){};
 
 var User = mongoose.model('User', userSchema);
