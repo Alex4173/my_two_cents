@@ -3,10 +3,12 @@
     .controller("LogoutController", LogoutController);
 
   LogoutController.$inject = ['$scope'];
-  $scope.logout = logout;
-  
-  function LogoutController(){
-    console.log('Loging out!');
 
+  function LogoutController($scope){
+  $scope.logout = logout;
+
+  function logout(){
+    console.log('Loging out!');
+}
   }
 }());
