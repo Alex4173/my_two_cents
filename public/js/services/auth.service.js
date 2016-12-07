@@ -4,7 +4,7 @@
 
   AuthService.$inject = ['$http','$window'];
 
-  function AuthService($window, $http){
+  function AuthService($http, $window){
     var localStorage = $window.localStorage;
     return {
       currentUser: currentUser,
