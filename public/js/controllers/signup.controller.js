@@ -6,9 +6,9 @@
 
   function SignUpController($scope, AuthService){
     $scope.signup = signup;
+    $scope.required = true;
 
     function signup(newUser){
-      console.log('x');
       AuthService.signup(newUser)
                  .then(function(){
                    alert('Yayyyyy! Signing up!');
